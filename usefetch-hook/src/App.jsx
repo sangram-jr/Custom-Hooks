@@ -1,24 +1,15 @@
 
-import { useEffect, useState } from 'react'
+
 import './App.css'
+import useFetch from './Hooks/useFetch'
 
 function App() {
-  const [data,setData]=useState({});
-
   
-  useEffect(()=>{
-    async function getData() {
-      const response=await fetch('https://jsonplaceholder.typicode.com/todos/1');
-      const json=await response.json();
-      setData(json);
-    }
-    getData();
-  },[])
- 
+ const titleData=useFetch('https://jsonplaceholder.typicode.com/todos/1');
 
   return (
     <div>
-      {data.title}
+      {JSON.stringify(titleData)}
     </div>
   )
 }
