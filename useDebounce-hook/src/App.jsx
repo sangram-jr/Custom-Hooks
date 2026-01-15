@@ -1,7 +1,9 @@
 
-import { useEffect, useState } from 'react'
+
+import { useEffect, useState } from 'react';
 import './App.css'
 import { useDebounce } from './Hook/useDebounce';
+
 
 function App() {
   const [inputValue,setInputValue]=useState('');
@@ -19,10 +21,10 @@ function App() {
 
   },[debounceValue])//when debouceValue changes then call the expensive function(backend call), rather than when input value change then expensive fun() call
   
-
+ 
   return (
     <div>
-      <input type='text' placeholder='....search' onChange={changeHandler} value={inputValue} />
+      <input type='text' placeholder='....search' onChange={changeHandler} value={inputValue}  />
     </div>
   )
 }
